@@ -20,7 +20,7 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
       : 0;
 
   return (
-    <SheetContent className="sm:max-w-md">
+    <SheetContent className="sm:max-w-md overflow-y-auto">
       <SheetHeader>
         <SheetTitle className="text-primary font-elsie font-normal text-3xl">
           Your Cart

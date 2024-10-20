@@ -6,14 +6,18 @@ import {
   LeafIcon,
   RocketIcon,
   BadgeIcon,
-  ShirtIcon,
-  UtensilsCrossedIcon,
-  LampIcon,
-  BedIcon,
-  GiftIcon,
   Upload,
   Lock,
   Database,
+  ShirtIcon,
+  WatchIcon,
+  UtensilsCrossedIcon,
+  FlowerIcon,
+  BookOpenIcon,
+  BedIcon,
+  BabyIcon,
+  GiftIcon,
+  BrushIcon,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
@@ -38,10 +42,14 @@ import { PrevArrow, NextArrow } from "@/components/ui/carouselArrow";
 
 const categoriesWithIcon = [
   { id: "fashion", label: "Fashion", icon: ShirtIcon },
+  { id: "cosmetics", label: "Cosmetics", icon: BrushIcon },
+  { id: "accessories", label: "Accessories", icon: WatchIcon },
   { id: "kitchen", label: "Kitchen", icon: UtensilsCrossedIcon },
-  { id: "decor", label: "Decor", icon: LampIcon },
+  { id: "decor", label: "Decor", icon: FlowerIcon },
+  { id: "stationary", label: "Stationary", icon: BookOpenIcon },
   { id: "home_essentials", label: "Home Essentials", icon: BedIcon },
-  { id: "gift_sets", label: "Gift Sets", icon: GiftIcon },
+  { id: "baby_products", label: "Baby Products", icon: BabyIcon },
+  { id: "gifts", label: "Gifts", icon: GiftIcon },
 ];
 
 const features = [

@@ -21,7 +21,7 @@ export const NextArrow = (props) => {
         ${isHovered ? "border-secondary shadow-xl" : "border-primary shadow-md"}
         ${
           isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-        } sm:bg-transparent bg-background`}
+        } xl:bg-transparent bg-background`}
     >
       <ChevronRight
         className={`w-6 h-10 transform transition-transform duration-300 ease-out
@@ -55,7 +55,7 @@ export const PrevArrow = (props) => {
         ${isHovered ? "border-secondary shadow-xl" : "border-primary shadow-md"}
         ${
           isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-        } sm:bg-transparent bg-background`}
+        } xl:bg-transparent bg-background`}
     >
       <ChevronLeft
         className={`w-6 h-10 transform transition-transform duration-300 ease-out

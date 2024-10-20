@@ -54,7 +54,6 @@ function AdminFeatures() {
   });
 
   useEffect(() => {
-    // Fetch Order Status Data
     axios
       .get(`${import.meta.env.VITE_API_URL}/api/admin/orders/order-status`)
       .then((response) => {
@@ -172,7 +171,7 @@ function AdminFeatures() {
           labels,
           datasets: [
             {
-              label: "Users Logged In by Month",
+              label: "New Users Every Month",
               data: labels.map((label, index) => ({
                 x: index + 1,
                 y: counts[index],

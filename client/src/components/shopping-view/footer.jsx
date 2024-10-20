@@ -10,15 +10,13 @@ export const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Animation on component load
   useEffect(() => {
-    // Entrance animation when the page loads
     gsap.fromTo(
       footerRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
     );
-  }, []); // Empty dependency array ensures this runs only once
+  }, []);
 
   return (
     <div ref={footerRef}>
@@ -38,9 +36,9 @@ export const Footer = () => {
           <FaChevronUp className="h-5 w-5" />
         </button>
 
-        <div className="flex flex-col md:flex-row justify-around w-full max-w-screen-lg">
+        <div className="flex flex-col lg:flex-row items-center w-full max-w-screen-lg">
           {/* Logo Section */}
-          <div className="text-center pb-5 md:pb-0 md:text-left">
+          <div className="text-center pb-5 mb-10 lg:mr-20 md:mb-4">
             <img
               src="https://res.cloudinary.com/ddnp4px7u/image/upload/v1727037000/logo_kseksa.png"
               alt="Eco Store Logo"
@@ -55,102 +53,105 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Menu Section */}
-          <div className="text-center md:text-left pb-5">
-            <h4 className="font-bold text-lg pb-3">Menu</h4>
-            <a href="/shop/listing" className="block text-sm hover:underline">
-              Catalog
-            </a>
-            <a href="/shop/about" className="block text-sm hover:underline">
-              About Us
-            </a>
-            <a href="#" className="block text-sm hover:underline">
-              Partners
-            </a>
-          </div>
+          {/* Other Sections */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full">
+            {/* Menu Section */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold text-lg pb-3">Menu</h4>
+              <a href="/shop/listing" className="block text-sm hover:underline">
+                Catalog
+              </a>
+              <a href="/shop/about" className="block text-sm hover:underline">
+                About Us
+              </a>
+              <a href="#" className="block text-sm hover:underline">
+                Partners
+              </a>
+              <a
+                href="/shop/terms-and-conditions"
+                className="block text-sm hover:underline"
+              >
+                Terms and Condition
+              </a>
+            </div>
 
-          {/* Catalog Section */}
-          <div className="text-center md:text-left pb-5">
-            <h4 className="font-bold text-lg pb-3">Catalog</h4>
-            <a
-              href="listing?category=fashion"
-              className="block text-sm hover:underline"
-            >
-              Fashion
-            </a>
-            <a
-              href="listing?category=cosmetics"
-              className="block text-sm hover:underline"
-            >
-              Cosmetics
-            </a>
-            <a
-              href="listing?category=accessories"
-              className="block text-sm hover:underline"
-            >
-              Accessories
-            </a>
-            <a
-              href="listing?category=kitchen"
-              className="block text-sm hover:underline"
-            >
-              Kitchen
-            </a>
-            <a
-              href="listing?category=decor"
-              className="block text-sm hover:underline"
-            >
-              Decor
-            </a>
-            <a
-              href="listing?category=home_essentials"
-              className="block text-sm hover:underline"
-            >
-              Home Essentials
-            </a>
-            <a
-              href="listing?category=baby_products"
-              className="block text-sm hover:underline"
-            >
-              Baby Products
-            </a>
-          </div>
+            {/* Catalog Section */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold text-lg pb-3">Catalog</h4>
+              <a
+                href="listing?category=fashion"
+                className="block text-sm hover:underline"
+              >
+                Fashion
+              </a>
+              <a
+                href="listing?category=cosmetics"
+                className="block text-sm hover:underline"
+              >
+                Cosmetics
+              </a>
+              <a
+                href="listing?category=accessories"
+                className="block text-sm hover:underline"
+              >
+                Accessories
+              </a>
+              <a
+                href="listing?category=kitchen"
+                className="block text-sm hover:underline"
+              >
+                Kitchen
+              </a>
+              <a
+                href="listing?category=decor"
+                className="block text-sm hover:underline"
+              >
+                Decor
+              </a>
+              <a
+                href="listing?category=home_essentials"
+                className="block text-sm hover:underline"
+              >
+                Home Essentials
+              </a>
+              <a
+                href="listing?category=baby_products"
+                className="block text-sm hover:underline"
+              >
+                Baby Products
+              </a>
+            </div>
 
-          {/* Contact Section */}
-          <div className="text-center md:text-left pb-5">
-            <h4 className="font-bold text-lg pb-3">Contacts</h4>
-            <a href="#" className="block text-sm hover:underline">
-              Support
-            </a>
-            <a href="#" className="block text-sm hover:underline">
-              FAQs
-            </a>
-            <a href="#" className="block text-sm hover:underline">
-              Privacy Policy
-            </a>
-            <a
-              href="/shop/terms-and-conditions"
-              className="block text-sm hover:underline"
-            >
-              Terms and Condition
-            </a>
-          </div>
+            {/* Contact Section */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold text-lg pb-3">Contacts</h4>
+              <a href="#" className="block text-sm hover:underline">
+                Support
+              </a>
+              <a href="#" className="block text-sm hover:underline">
+                FAQs
+              </a>
+              <a href="#" className="block text-sm hover:underline">
+                Privacy Policy
+              </a>
+            </div>
 
-          {/* Social Media Section */}
-          <div className="text-center md:text-left pb-5">
-            <h4 className="font-bold text-lg pb-3">Social Media</h4>
-            <a href="#" className="block text-sm hover:underline">
-              Facebook
-            </a>
-            <a href="#" className="block text-sm hover:underline">
-              Instagram
-            </a>
-            <a href="#" className="block text-sm hover:underline">
-              Twitter
-            </a>
-            <a href="#" className="block text-sm hover:underline">
-              Reddit
-            </a>
+            {/* Social Media Section */}
+            <div className="text-center md:text-left">
+              <h4 className="font-bold text-lg pb-3">Social Media</h4>
+              <a href="#" className="block text-sm hover:underline">
+                Facebook
+              </a>
+              <a href="#" className="block text-sm hover:underline">
+                Instagram
+              </a>
+              <a href="#" className="block text-sm hover:underline">
+                Twitter
+              </a>
+              <a href="#" className="block text-sm hover:underline">
+                Reddit
+              </a>
+            </div>
           </div>
         </div>
       </div>

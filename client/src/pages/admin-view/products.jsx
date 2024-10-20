@@ -128,17 +128,20 @@ function AdminProducts() {
       </div>
       <div className="flex flex-wrap justify-center gap-4 p-4">
         {productList && productList.length > 0
-          ? productList.map((productItem) => (
-              <AdminProductTile
-                key={productItem.id}
-                className="admin-product-tile"
-                setFormData={setFormData}
-                setOpenCreateProductsDialog={setOpenCreateProductsDialog}
-                setCurrentEditedId={setCurrentEditedId}
-                product={productItem}
-                handleDelete={handleDelete}
-              />
-            ))
+          ? productList
+              .slice() // Create a shallow copy to avoid mutating the original list
+              .sort((a, b) => a.title.localeCompare(b.title)) // Sort by title alphabetically
+              .map((productItem) => (
+                <AdminProductTile
+                  key={productItem.id}
+                  className="admin-product-tile"
+                  setFormData={setFormData}
+                  setOpenCreateProductsDialog={setOpenCreateProductsDialog}
+                  setCurrentEditedId={setCurrentEditedId}
+                  product={productItem}
+                  handleDelete={handleDelete}
+                />
+              ))
           : null}
       </div>
       <Sheet

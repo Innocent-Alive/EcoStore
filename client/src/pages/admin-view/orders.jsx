@@ -21,7 +21,7 @@ function AdminOrders() {
       opacity: 0,
       y: 10,
       duration: 0.4,
-      stagger: 0.1, // Stagger the animations for child elements
+      stagger: 0.1,
       ease: "power2.out",
     });
   }, []);

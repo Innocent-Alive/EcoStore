@@ -18,7 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "../ui/avatar";
-import { logoutUser } from "@/store/auth-slice";
+import { logoutUser, resetTokenAndCredentials } from "@/store/auth-slice";
 import UserCartWrapper from "./cart-wrapper";
 import { useEffect, useRef, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cart-slice";
@@ -74,7 +74,9 @@ function HeaderRightContent() {
   const dispatch = useDispatch();
 
   function handleLogout() {
-    dispatch(logoutUser());
+    dispatch(resetTokenAndCredentials());
+    sessionStorage.clear();
+    navigate("/auth/login");
   }
 
   useEffect(() => {
@@ -172,8 +174,12 @@ function ShoppingHeader() {
         </Link>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" className="lg:hidden">
-              <Menu className="h-6 w-6" />
+            <Button
+              variant="outline"
+              size="icon"
+              className="lg:hidden bg-primary"
+            >
+              <Menu className="h-6 w-6 text-background" />
               <span className="sr-only">Toggle header menu</span>
             </Button>
           </SheetTrigger>

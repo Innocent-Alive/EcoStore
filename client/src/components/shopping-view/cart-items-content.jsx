@@ -72,7 +72,7 @@ function UserCartItemsContent({ cartItem }) {
   }
 
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex items-center flex-col sm:flex-row sm:space-x-4">
       <img
         src={cartItem?.image}
         alt={cartItem?.title}
@@ -80,7 +80,7 @@ function UserCartItemsContent({ cartItem }) {
       />
       <div className="flex-1">
         <h3 className="font-semibold text-primary">{cartItem?.title}</h3>
-        <div className="flex items-center gap-2 mt-1">
+        <div className="flex items-center justify-center sm:justify-start gap-2 mt-1">
           <Button
             variant="outline"
             className="h-8 w-8 rounded-full hover:bg-secondary"
@@ -103,7 +103,7 @@ function UserCartItemsContent({ cartItem }) {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col items-end">
+      <div className="flex flex-col items-center sm:items-end">
         <p className="font-semibold text-secondary">
           $
           {(

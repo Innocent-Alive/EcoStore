@@ -5,7 +5,7 @@ import { loginUser } from "@/store/auth-slice";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap"; // Import GSAP
+import { gsap } from "gsap";
 
 const initialState = {
   email: "",

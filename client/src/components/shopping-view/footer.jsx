@@ -141,24 +141,28 @@ export const Footer = () => {
               <h4 className="font-bold text-lg pb-3">Social Media</h4>
               <a
                 href="https://www.facebook.com/TheInnocentAlive"
+                target="_blank"
                 className="block text-sm hover:underline"
               >
                 Facebook
               </a>
               <a
                 href="https://www.instagram.com/innocent_alive/"
+                target="_blank"
                 className="block text-sm hover:underline"
               >
                 Instagram
               </a>
               <a
                 href="https://x.com/Innocent_Alive_"
+                target="_blank"
                 className="block text-sm hover:underline"
               >
                 Twitter
               </a>
               <a
                 href="https://www.reddit.com/user/Effective-Arrival335/"
+                target="_blank"
                 className="block text-sm hover:underline"
               >
                 Reddit
@@ -177,6 +181,7 @@ export const Footer = () => {
           by{" "}
           <a
             href="https://github.com/Innocent-Alive"
+            target="_blank"
             className="hover:underline font-bold underline-offset-2 transition-all duration-300 hover:[text-shadow:0_0_2px_#ba9659] hover:[-webkit-text-stroke:0.05px_#ef4444]"
           >
             Abhay Kumar Das

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="ECO-STORE: Your one-stop shop for natural and biodegradable products. Promoting eco-friendly living and sustainable practices."
+      content="ECO STORE: Your one-stop shop for natural and biodegradable products. Promoting eco-friendly living and sustainable practices."
     />
     <meta name="author" content="Abhay Kumar Das" />
     <meta name="creator" content="Abhay Kumar Das" />
@@ -15,11 +15,33 @@
     <meta name="robots" content="index, follow" />
     <meta
       property="og:title"
-      content="ECO-STORE - Natural & Biodegradable Products"
+      content="ECO STORE - Eco-friendly place,
+where sustainability
+meets style!"
     />
     <link rel="shortcut icon" href="./src/assets/logo3.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ECO-STORE</title>
+    <title>
+      EcoStore - Eco-friendly place, where sustainability meets style!
+    </title>
+    <script>
+      const originalTitle = document.title;
+      let timeoutId;
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          document.title = "Don't Leave Us! 😢";
+
+          // Reset back to original title after 3 seconds (3000 ms)
+          timeoutId = setTimeout(() => {
+            document.title = originalTitle;
+          }, 100000);
+        } else {
+          clearTimeout(timeoutId);
+          document.title = originalTitle;
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>

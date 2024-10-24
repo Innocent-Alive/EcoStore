@@ -73,6 +73,7 @@ export const addProductFormElements = [
       { id: "stationary", label: "Stationary" },
       { id: "home_essentials", label: "Home Essentials" },
       { id: "baby_products", label: "Baby Products" },
+      { id: "seeds", label: "seeds" },
     ],
   },
   {
@@ -148,6 +149,7 @@ export const categoryOptionsMap = {
   stationary: "Stationary",
   home_essentials: "Home Essentials",
   baby_products: "Baby Products",
+  seeds: "seeds",
 };
 
 export const brandOptionsMap = {
@@ -169,6 +171,7 @@ export const filterOptions = {
     { id: "stationary", label: "Stationary" },
     { id: "home_essentials", label: "Home Essentials" },
     { id: "baby_products", label: "Baby Products" },
+    { id: "seeds", label: "Seeds" },
   ],
 
   brand: [

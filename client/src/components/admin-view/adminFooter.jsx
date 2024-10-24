@@ -12,6 +12,7 @@ export const FooterAdmin = () => {
         by{" "}
         <a
           href="https://github.com/Innocent-Alive"
+          target="_blank"
           className="hover:underline font-bold underline-offset-2 transition-all duration-300 hover:[text-shadow:0_0_2px_#ba9659] hover:[-webkit-text-stroke:0.05px_#ef4444]"
         >
           Abhay Kumar Das

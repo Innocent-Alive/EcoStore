@@ -10,14 +10,15 @@ import {
   Lock,
   Database,
   ShirtIcon,
-  WatchIcon,
+  Gem,
   UtensilsCrossedIcon,
-  FlowerIcon,
-  BookOpenIcon,
-  BedIcon,
+  Sparkles,
+  NotebookPen,
+  HousePlus,
   BabyIcon,
   GiftIcon,
-  BrushIcon,
+  Sprout,
+  SmilePlus,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
@@ -39,17 +40,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { PrevArrow, NextArrow } from "@/components/ui/carouselArrow";
+import TestimonialSection from "@/components/ui/testimonials";
 
 const categoriesWithIcon = [
   { id: "fashion", label: "Fashion", icon: ShirtIcon },
-  { id: "cosmetics", label: "Cosmetics", icon: BrushIcon },
-  { id: "accessories", label: "Accessories", icon: WatchIcon },
+  { id: "cosmetics", label: "Cosmetics", icon: SmilePlus },
+  { id: "accessories", label: "Accessories", icon: Gem },
   { id: "kitchen", label: "Kitchen", icon: UtensilsCrossedIcon },
-  { id: "decor", label: "Decor", icon: FlowerIcon },
-  { id: "stationary", label: "Stationary", icon: BookOpenIcon },
-  { id: "home_essentials", label: "Home Essentials", icon: BedIcon },
+  { id: "decor", label: "Decor", icon: Sparkles },
+  { id: "stationary", label: "Stationary", icon: NotebookPen },
+  { id: "home_essentials", label: "Home Essentials", icon: HousePlus },
   { id: "baby_products", label: "Baby Products", icon: BabyIcon },
   { id: "gifts", label: "Gifts", icon: GiftIcon },
+  { id: "seeds", label: "Seeds", icon: Sprout },
 ];
 
 const features = [
@@ -316,9 +319,11 @@ function ShoppingHome() {
         setOpen={setOpenDetailsDialog}
         productDetails={productDetails}
       />
-
       {/* Company Statistics Count */}
       <Stats />
+
+      {/* Testimonials section  */}
+      <TestimonialSection />
 
       <motion.section
         className="py-12 bg-background flex flex-col lg:flex-row"
@@ -328,7 +333,7 @@ function ShoppingHome() {
         transition={{ duration: 0.5 }}
       >
         <div className="container my-16 flex flex-col items-center mx-auto px-4 text-center lg:text-left lg:w-1/2">
-          <h2 className="text-3xl md:text-4xl font-bold text-center font-elsie text-primary mb-4">
+          <h2 className="text-3xl font-bold text-center font-elsie text-primary mb-4">
             Learn More About Us
           </h2>
           <p className="mb-4 text-center">

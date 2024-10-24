@@ -39,39 +39,39 @@ function ShoppingProductTile({
 
   const handleCardHoverEnter = () => {
     gsap.to(imageRef.current, {
-      scale: 1.1,
-      duration: 0.6,
+      scale: 1.07,
+      duration: 0.1,
       ease: "power2.out",
     });
 
     gsap.to(textRef.current, {
       y: -8,
-      duration: 0.6,
+      duration: 0.3,
       ease: "power2.out",
     });
 
     gsap.to(cardRef.current, {
       boxShadow: "0px 15px 35px rgba(0, 0, 0, 0.2)",
-      duration: 0.6,
+      duration: 0.3,
     });
   };
 
   const handleCardHoverLeave = () => {
     gsap.to(imageRef.current, {
       scale: 1,
-      duration: 0.6,
+      duration: 0.1,
       ease: "power2.out",
     });
 
     gsap.to(textRef.current, {
       y: 0,
-      duration: 0.6,
+      duration: 0.3,
       ease: "power2.out",
     });
 
     gsap.to(cardRef.current, {
       boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-      duration: 0.6,
+      duration: 0.3,
       ease: "power1.out",
     });
   };

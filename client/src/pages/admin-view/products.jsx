@@ -129,7 +129,7 @@ function AdminProducts() {
       <div className="flex flex-wrap justify-center gap-4 p-4">
         {productList && productList.length > 0
           ? productList
-              .slice() // Create a shallow copy to avoid mutating the original list
+              .slice()
               .sort((a, b) => a.title.localeCompare(b.title)) // Sort by title alphabetically
               .map((productItem) => (
                 <AdminProductTile

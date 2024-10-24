@@ -8,11 +8,10 @@ import { gsap } from "gsap";
 function ProductFilter({ filters, handleFilter }) {
   const filterRef = useRef(null);
 
-  // Animation effect on component mount
   useEffect(() => {
     if (filterRef.current) {
       gsap.from(filterRef.current, {
-        x: -50, // Start from the left
+        x: -50,
         opacity: 0,
         duration: 0.6,
         ease: "power2.out",

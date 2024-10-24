@@ -1,5 +1,4 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import accImg from "../../assets/account.jpg";
 import Address from "@/components/shopping-view/address";
 import ShoppingOrders from "@/components/shopping-view/orders";
 
@@ -8,7 +7,7 @@ function ShoppingAccount() {
     <div className="flex flex-col">
       <div className="relative h-[300px] w-full overflow-hidden">
         <img
-          src={accImg}
+          src="https://static.vecteezy.com/system/resources/previews/006/483/814/original/eco-friendly-concept-banner-with-lush-green-foliage-illustration-vector.jpg"
           className="h-full w-full object-cover object-center"
         />
       </div>

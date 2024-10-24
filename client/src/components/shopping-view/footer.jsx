@@ -139,16 +139,28 @@ export const Footer = () => {
             {/* Social Media Section */}
             <div className="text-center md:text-left">
               <h4 className="font-bold text-lg pb-3">Social Media</h4>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="https://www.facebook.com/TheInnocentAlive"
+                className="block text-sm hover:underline"
+              >
                 Facebook
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="https://www.instagram.com/innocent_alive/"
+                className="block text-sm hover:underline"
+              >
                 Instagram
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="https://x.com/Innocent_Alive_"
+                className="block text-sm hover:underline"
+              >
                 Twitter
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="https://www.reddit.com/user/Effective-Arrival335/"
+                className="block text-sm hover:underline"
+              >
                 Reddit
               </a>
             </div>
@@ -164,7 +176,7 @@ export const Footer = () => {
           <Heart size={16} fill="red" className="text-red-500 animate-pulse" />
           by{" "}
           <a
-            href="#"
+            href="https://github.com/Innocent-Alive"
             className="hover:underline font-bold underline-offset-2 transition-all duration-300 hover:[text-shadow:0_0_2px_#ba9659] hover:[-webkit-text-stroke:0.05px_#ef4444]"
           >
             Abhay Kumar Das

@@ -11,7 +11,7 @@ export const FooterAdmin = () => {
         <Heart size={16} fill="red" className="text-red-500 animate-pulse" />
         by{" "}
         <a
-          href="#"
+          href="https://github.com/Innocent-Alive"
           className="hover:underline font-bold underline-offset-2 transition-all duration-300 hover:[text-shadow:0_0_2px_#ba9659] hover:[-webkit-text-stroke:0.05px_#ef4444]"
         >
           Abhay Kumar Das

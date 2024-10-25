@@ -1,9 +1,9 @@
 // Spinner.js
-import { FlowerSpinner } from "react-epic-spinners";
+import { ClimbingBoxLoader } from "react-spinners";
 
 function Spinner({
-  size = 80, // Size of the spinner
-  color = "#838a60", // Green color for the spinner
+  size = 30, // Size of the loader
+  color = "#838a60", // Main color for the loader
   className = "",
   ...props
 }) {
@@ -12,7 +12,7 @@ function Spinner({
       className={`fixed inset-0 flex items-center justify-center bg-background z-50 ${className}`}
       {...props}
     >
-      <FlowerSpinner size={size} color={color} />
+      <ClimbingBoxLoader size={size} color={color} />
     </div>
   );
 }

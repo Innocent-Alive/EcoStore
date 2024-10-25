@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import { PacmanLoader } from "react-spinners";
 
 const LoaderContext = createContext();
 
@@ -13,8 +13,8 @@ export const LoaderProvider = ({ children }) => {
     <LoaderContext.Provider value={{ startLoading, stopLoading }}>
       {/* Loader UI */}
       {loading && (
-        <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
-          <ClipLoader color={"#3498db"} loading={loading} size={50} />
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <PacmanLoader color="#22c55e" size={50} loading={loading} />
         </div>
       )}
       {children}

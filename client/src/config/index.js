@@ -149,7 +149,7 @@ export const categoryOptionsMap = {
   stationary: "Stationary",
   home_essentials: "Home Essentials",
   baby_products: "Baby Products",
-  seeds: "seeds",
+  seeds: "Seeds",
 };
 
 export const brandOptionsMap = {

@@ -41,6 +41,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { PrevArrow, NextArrow } from "@/components/ui/carouselArrow";
 import TestimonialSection from "@/components/ui/testimonials";
+import Seeds from "@/components/ui/seedsSection";
 
 const categoriesWithIcon = [
   { id: "fashion", label: "Fashion", icon: ShirtIcon },
@@ -264,7 +265,6 @@ function ShoppingHome() {
           </div>
         </div>
       </motion.section>
-
       {/* fashion Deals carousel */}
       <motion.section
         className="py-12 border-b-2 border-secondary border-dotted"
@@ -287,10 +287,9 @@ function ShoppingHome() {
           ))}
         </Slider>
       </motion.section>
-
       {/* Video Carousel of Deals  */}
       <VideoCarousel />
-
+      <Seeds />
       {/* Kitchen Items carousel */}
       <motion.section
         className="py-12 border-b-2 border-secondary border-dotted"
@@ -313,7 +312,6 @@ function ShoppingHome() {
           ))}
         </Slider>
       </motion.section>
-
       <ProductDetailsDialog
         open={openDetailsDialog}
         setOpen={setOpenDetailsDialog}
@@ -321,10 +319,8 @@ function ShoppingHome() {
       />
       {/* Company Statistics Count */}
       <Stats />
-
       {/* Testimonials section  */}
       <TestimonialSection />
-
       <motion.section
         className="py-12 bg-background flex flex-col lg:flex-row"
         initial={{ opacity: 0, scale: 0.95 }}

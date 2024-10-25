@@ -8,7 +8,7 @@ function ShoppingAccount() {
       <div className="relative h-[300px] w-full overflow-hidden">
         <img
           src="https://static.vecteezy.com/system/resources/previews/006/483/814/original/eco-friendly-concept-banner-with-lush-green-foliage-illustration-vector.jpg"
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-cover object-center opacity-90"
         />
       </div>
       <div className="container mx-auto grid grid-cols-1 gap-8 py-8">

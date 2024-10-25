@@ -1,8 +1,8 @@
 // Spinner.js
-import { ClimbingBoxLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 
 function Spinner({
-  size = 20, // Size of the loader
+  size = 15, // Size of the loader (diameter of the dots)
   color = "#838a60", // Main color for the loader
   className = "",
   ...props
@@ -12,7 +12,7 @@ function Spinner({
       className={`fixed inset-0 flex items-center justify-center bg-background z-50 ${className}`}
       {...props}
     >
-      <ClimbingBoxLoader size={size} color={color} />
+      <PropagateLoader size={size} color={color} />
     </div>
   );
 }

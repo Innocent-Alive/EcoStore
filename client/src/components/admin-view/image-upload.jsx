@@ -117,7 +117,7 @@ function ProductImageUpload({
           </span>
         </Label>
       ) : imageLoadingState ? (
-        <Spinner size={60} color="#838a60" />
+        <Spinner size={60} color="#ba9659" />
       ) : (
         <div className="flex items-center justify-between">
           <div className="flex items-center">

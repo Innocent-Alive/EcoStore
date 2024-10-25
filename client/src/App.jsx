@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="flex flex-col overflow-hidden bg-background">
-      <Suspense fallback={<Spinner size={50} />}>
+      <Suspense fallback={<Spinner size={20} />}>
         <Routes>
           <Route
             path="/"

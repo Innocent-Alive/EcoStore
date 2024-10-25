@@ -45,7 +45,7 @@ function App() {
   }, [dispatch]);
 
   if (isLoading) {
-    return <Spinner size={60} color="#838a60" />;
+    return <Spinner size={20} color="#838a60" />;
   }
 
   console.log(isLoading, user);

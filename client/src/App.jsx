@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuth } from "./store/auth-slice";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Spinner } from "@/components/ui/skeleton"; // Import Spinner component
 import CheckAuth from "./components/common/check-auth";
 
 // Lazy loaded components
@@ -44,34 +44,15 @@ function App() {
     dispatch(checkAuth(token));
   }, [dispatch]);
 
-  if (isLoading)
-    return (
-      <Skeleton
-        count={3}
-        height="30px"
-        width="80%"
-        borderRadius="8px"
-        className="mb-4"
-      />
-    );
+  if (isLoading) {
+    return <Spinner size={60} color="#838a60" />;
+  }
 
   console.log(isLoading, user);
 
   return (
     <div className="flex flex-col overflow-hidden bg-background">
-      <Suspense
-        fallback={
-          <div className="flex justify-center items-center h-screen">
-            <Skeleton
-              count={1}
-              height="50px"
-              width="50px"
-              borderRadius="50%"
-              className="animate-spin"
-            />
-          </div>
-        }
-      >
+      <Suspense fallback={<Spinner size={50} />}>
         <Routes>
           <Route
             path="/"

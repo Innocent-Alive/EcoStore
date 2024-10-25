@@ -4,7 +4,7 @@ import { Label } from "../ui/label";
 import { useEffect, useRef } from "react";
 import { Button } from "../ui/button";
 import axios from "axios";
-import { Skeleton } from "../ui/skeleton";
+import { Spinner } from "../ui/skeleton";
 
 function ProductImageUpload({
   imageFile,
@@ -117,7 +117,7 @@ function ProductImageUpload({
           </span>
         </Label>
       ) : imageLoadingState ? (
-        <Skeleton className="h-10 bg-gray-100" />
+        <Spinner size={60} color="#838a60" />
       ) : (
         <div className="flex items-center justify-between">
           <div className="flex items-center">

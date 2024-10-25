@@ -2,7 +2,7 @@
 import { ClimbingBoxLoader } from "react-spinners";
 
 function Spinner({
-  size = 30, // Size of the loader
+  size = 20, // Size of the loader
   color = "#838a60", // Main color for the loader
   className = "",
   ...props

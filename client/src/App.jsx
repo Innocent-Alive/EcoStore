@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuth } from "./store/auth-slice";
-import { Spinner } from "@/components/ui/skeleton"; // Import Spinner component
+import { Spinner, Spinner2 } from "@/components/ui/skeleton"; // Import Spinner component
 import CheckAuth from "./components/common/check-auth";
 
 // Lazy loaded components
@@ -45,7 +45,7 @@ function App() {
   }, [dispatch]);
 
   if (isLoading) {
-    return <Spinner size={20} color="#838a60" />;
+    return <Spinner2 size={20} color="#838a60" />;
   }
 
   console.log(isLoading, user);

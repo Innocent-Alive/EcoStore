@@ -43,10 +43,10 @@ const Seeds = () => {
         </div>
 
         {/* Title and Content */}
-        <h2 className="text-3xl font-elsie font-bold text-[#838a60] mt-10 md:mt-8">
+        <h2 className="text-3xl font-elsie font-bold text-primary mt-10 md:mt-8">
           {seedMessage.title}
         </h2>
-        <p className="mt-4 text-lg text-[#6d7451]">{seedMessage.description}</p>
+        <p className="mt-4 text-lg text-primary">{seedMessage.description}</p>
         <ul className="mt-4 list-disc list-inside space-y-2 hidden md:block">
           {seedMessage.benefits.map((benefit, index) => (
             <li key={index} className="text-base text-secondary">

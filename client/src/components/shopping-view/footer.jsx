@@ -21,7 +21,7 @@ export const Footer = () => {
   return (
     <div ref={footerRef}>
       <div
-        className="flex flex-col items-center bg-[#838a60] text-[#f4e8da] py-10 px-5"
+        className="flex flex-col items-center bg-primary text-background py-10 px-5"
         style={{
           borderTopRightRadius: "40px",
           borderTopLeftRadius: "40px",

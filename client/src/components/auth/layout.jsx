@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import ecoBanner from "../../assets/ecobanner.jpg";
 
 function AuthLayout() {
   useEffect(() => {
@@ -31,7 +32,7 @@ function AuthLayout() {
         {/* Color overlay */}
         <div className="absolute inset-0 auth-image-overlay" />
         <img
-          src="https://media.licdn.com/dms/image/v2/D5612AQHLZYCk4Z1WRw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1711883762940?e=2147483647&v=beta&t=TjJlqw5IxJSWhuy69NuHXlWyi0saDyEMQ0vhFP0frU0"
+          src={ecoBanner}
           alt="banner image"
           className="object-cover h-full auth-image"
         />

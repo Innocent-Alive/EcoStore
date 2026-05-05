@@ -19,9 +19,12 @@ import {
   GiftIcon,
   Sprout,
   SmilePlus,
+  Smartphone,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAllFilteredProducts,
@@ -31,7 +34,6 @@ import ShoppingProductTile from "@/components/shopping-view/product-tile";
 import { useNavigate } from "react-router-dom";
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "@/components/ui/use-toast";
-import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { getFeatureImages } from "@/store/common-slice";
 import Stats from "@/components/ui/stats";
 import PaypalReturnPage from "./paypal-return";
@@ -70,9 +72,10 @@ function ShoppingHome() {
   );
   const { featureImageList } = useSelector((state) => state.commonFeature);
 
-  const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
-
   const { user } = useSelector((state) => state.auth);
+
+  const fashionSliderRef = useRef(null);
+  const kitchenSliderRef = useRef(null);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -109,11 +112,6 @@ function ShoppingHome() {
     });
   }
 
-  useEffect(() => {
-    if (productDetails !== null) {
-      setOpenDetailsDialog(true);
-    }
-  }, [productDetails]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -144,8 +142,8 @@ function ShoppingHome() {
     speed: 600,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    nextArrow: null,
+    prevArrow: null,
     responsive: [
       {
         breakpoint: 1024,
@@ -273,10 +271,26 @@ function ShoppingHome() {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold text-center text-primary mb-12 font-elsie">
-          Fashion Deals
-        </h2>
-        <Slider {...settings}>
+        <div className="container mx-auto px-4 mb-8 flex justify-between items-center">
+          <h2 className="text-3xl font-bold text-primary font-elsie">
+            Fashion Deals
+          </h2>
+          <div className="flex gap-4">
+            <button 
+              onClick={() => fashionSliderRef.current.slickPrev()}
+              className="p-2 border-2 border-primary rounded-lg text-primary hover:border-secondary hover:text-secondary transition-all"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button 
+              onClick={() => fashionSliderRef.current.slickNext()}
+              className="p-2 border-2 border-primary rounded-lg text-primary hover:border-secondary hover:text-secondary transition-all"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+        <Slider ref={fashionSliderRef} {...settings}>
           {fashionProducts?.map((product) => (
             <ShoppingProductTile
               key={product.id}
@@ -298,10 +312,26 @@ function ShoppingHome() {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold text-primary text-center mb-12 font-elsie">
-          Kitchen Deals
-        </h2>
-        <Slider {...settings}>
+        <div className="container mx-auto px-4 mb-8 flex justify-between items-center">
+          <h2 className="text-3xl font-bold text-primary font-elsie">
+            Kitchen Deals
+          </h2>
+          <div className="flex gap-4">
+            <button 
+              onClick={() => kitchenSliderRef.current.slickPrev()}
+              className="p-2 border-2 border-primary rounded-lg text-primary hover:border-secondary hover:text-secondary transition-all"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button 
+              onClick={() => kitchenSliderRef.current.slickNext()}
+              className="p-2 border-2 border-primary rounded-lg text-primary hover:border-secondary hover:text-secondary transition-all"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+        <Slider ref={kitchenSliderRef} {...settings}>
           {kitchenProducts?.map((productItem) => (
             <ShoppingProductTile
               key={productItem.id}
@@ -312,11 +342,43 @@ function ShoppingHome() {
           ))}
         </Slider>
       </motion.section>
-      <ProductDetailsDialog
-        open={openDetailsDialog}
-        setOpen={setOpenDetailsDialog}
-        productDetails={productDetails}
-      />
+      {/* Android App Section */}
+      <motion.section
+        className="py-16 bg-secondary/10 flex flex-col lg:flex-row items-center px-6 lg:px-20 gap-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="lg:w-1/2 flex justify-center">
+          <div className="relative group">
+            <div className="absolute -inset-2 bg-primary/20 rounded-3xl blur-2xl group-hover:bg-primary/30 transition duration-500"></div>
+            <img 
+              src="https://img.freepik.com/free-vector/hand-holding-smartphone-with-mobile-banking-app-screen_23-2148670125.jpg" 
+              alt="EcoStore Mobile App" 
+              className="relative w-full max-w-sm rounded-3xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </div>
+        </div>
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <h2 className="text-4xl font-bold font-elsie text-primary mb-6">
+            Get the EcoStore App
+          </h2>
+          <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto lg:mx-0">
+            Enjoy a faster, more personalized shopping experience with our official Android app. Track orders, get exclusive notifications, and shop sustainably on the go.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <button 
+              onClick={() => navigate("/shop/download-app")}
+              className="flex items-center justify-center gap-3 bg-primary text-background px-8 py-4 rounded-xl font-bold text-lg hover:bg-secondary transition-colors duration-300 shadow-lg"
+            >
+              <Smartphone className="w-6 h-6" />
+              Download Android App
+            </button>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Company Statistics Count */}
       <Stats />
       {/* Testimonials section  */}

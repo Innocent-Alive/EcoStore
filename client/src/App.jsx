@@ -2,8 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuth } from "./store/auth-slice";
-import { Spinner, Spinner2 } from "@/components/ui/skeleton"; // Import Spinner component
+import { Spinner } from "@/components/ui/skeleton"; // Import Spinner component
 import CheckAuth from "./components/common/check-auth";
+import ScrollToTop from "./components/common/scroll-to-top";
 
 // Lazy loaded components
 const AuthLayout = lazy(() => import("./components/auth/layout"));
@@ -26,10 +27,12 @@ const PaymentSuccessPage = lazy(() =>
   import("./pages/shopping-view/payment-success")
 );
 const SearchProducts = lazy(() => import("./pages/shopping-view/search"));
+const ProductDetailsPage = lazy(() => import("./pages/shopping-view/product-details"));
 const AboutUs = lazy(() => import("./pages/shopping-view/aboutUs"));
 const TermsAndConditions = lazy(() =>
   import("./pages/shopping-view/termsAndCondition")
 );
+const DownloadApp = lazy(() => import("./pages/shopping-view/download-app"));
 const UnauthPage = lazy(() => import("./pages/unauth-page"));
 const NotFound = lazy(() => import("./pages/not-found"));
 
@@ -51,7 +54,8 @@ function App() {
   console.log(isLoading, user);
 
   return (
-    <div className="flex flex-col overflow-hidden bg-background">
+    <div className="flex flex-col bg-background">
+      <ScrollToTop />
       <Suspense fallback={<Spinner size={20} />}>
         <Routes>
           <Route
@@ -106,7 +110,9 @@ function App() {
             <Route path="paypal-return" element={<PaypalReturnPage />} />
             <Route path="payment-success" element={<PaymentSuccessPage />} />
             <Route path="search" element={<SearchProducts />} />
+            <Route path="product/:id" element={<ProductDetailsPage />} />
             <Route path="about" element={<AboutUs />} />
+            <Route path="download-app" element={<DownloadApp />} />
           </Route>
           <Route path="/unauth-page" element={<UnauthPage />} />
           <Route

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"; // Import Framer Motion
-import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import ShoppingProductTile from "@/components/shopping-view/product-tile";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
@@ -17,7 +16,6 @@ import { gsap } from "gsap";
 
 function SearchProducts() {
   const [keyword, setKeyword] = useState("");
-  const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const { searchResults } = useSelector((state) => state.shopSearch);
@@ -91,9 +89,6 @@ function SearchProducts() {
     dispatch(fetchProductDetails(getCurrentProductId));
   }
 
-  useEffect(() => {
-    if (productDetails !== null) setOpenDetailsDialog(true);
-  }, [productDetails]);
 
   useEffect(() => {
     gsap.from(productRefs.current, {
@@ -149,11 +144,6 @@ function SearchProducts() {
           </div>
         ))}
       </div>
-      <ProductDetailsDialog
-        open={openDetailsDialog}
-        setOpen={setOpenDetailsDialog}
-        productDetails={productDetails}
-      />
     </motion.div>
   );
 }

@@ -1,4 +1,4 @@
-import { LogOut, Menu, ShoppingCart, UserCog } from "lucide-react";
+import { LogOut, Menu, ShoppingCart, UserCog, Bell } from "lucide-react";
 import {
   Link,
   useLocation,
@@ -56,10 +56,11 @@ function MenuItems() {
       {shoppingViewHeaderMenuItems.map((menuItem) => (
         <Label
           onClick={() => handleNavigate(menuItem)}
-          className="text-md font-medium cursor-pointer text-primary hover:text-secondary hover:underline hover:underline-offset-4 hover:bg-card px-2 py-1 transition duration-300 ease-in-out rounded-md"
+          className="text-md font-semibold cursor-pointer text-primary px-3 py-2 transition-all duration-300 ease-in-out rounded-lg hover:bg-primary/5 hover:scale-105 active:scale-95 relative group"
           key={menuItem.id}
         >
           {menuItem.label}
+          <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
         </Label>
       ))}
     </nav>
@@ -110,18 +111,28 @@ function HeaderRightContent() {
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Avatar className="bg-primary">
+          <Avatar className="bg-primary cursor-pointer hover:scale-105 transition-transform duration-300 shadow-md">
             <AvatarFallback className="bg-primary text-background font-bold">
               {user?.userName[0].toUpperCase()}
             </AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
-        <DropdownMenuContent side="right" className="w-56">
-          <DropdownMenuLabel>Logged in as {user?.userName}</DropdownMenuLabel>
+        <DropdownMenuContent side="bottom" align="end" className="w-64 p-2 mt-2 rounded-2xl shadow-2xl border-2 border-primary/10">
+          <DropdownMenuLabel>{user?.userName}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => navigate("/shop/account")}>
             <UserCog className="mr-2 h-4 w-4" />
             Account
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem onClick={() => navigate("/shop/notifications")}>
+            <Bell className="mr-2 h-4 w-4" />
+            Notifications
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem onClick={() => navigate("/shop/about")}>
+            <UserCog className="mr-2 h-4 w-4" />
+            About Us
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleLogout}>

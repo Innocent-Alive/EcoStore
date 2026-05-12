@@ -142,6 +142,7 @@ function ShoppingHome() {
     speed: 600,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     nextArrow: null,
     prevArrow: null,
     responsive: [
@@ -150,6 +151,7 @@ function ShoppingHome() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
@@ -157,6 +159,7 @@ function ShoppingHome() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
       {
@@ -164,6 +167,7 @@ function ShoppingHome() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
@@ -241,20 +245,21 @@ function ShoppingHome() {
           <h2 className="text-3xl font-bold text-center text-primary mb-8 font-elsie">
             Shop by category
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
             {categoriesWithIcon.map((categoryItem) => (
               <Card
+                key={categoryItem.id}
                 onClick={() =>
                   handleNavigateToListingPage(categoryItem, "category")
                 }
-                className="cursor-pointer hover:shadow-lg transition-shadow border-[2px]"
+                className="cursor-pointer hover:shadow-lg transition-shadow border-[2px] rounded-2xl"
               >
-                <CardContent className="flex flex-col items-center justify-center p-6">
+                <CardContent className="flex flex-col items-center justify-center p-3 md:p-6 h-full">
                   <categoryItem.icon
-                    className="w-12 h-12 mb-4 text-secondary"
+                    className="w-7 h-7 md:w-12 md:h-12 mb-2 md:mb-4 text-secondary"
                     style={{ strokeWidth: 1.5 }}
                   />
-                  <span className="font-bold text-primary">
+                  <span className="font-bold text-primary text-[10px] md:text-base text-center leading-tight">
                     {categoryItem.label}
                   </span>
                 </CardContent>

@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { StatusBar, Style } from '@capacitor/status-bar';
+import { Capacitor } from '@capacitor/core';
 import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuth } from "./store/auth-slice";
@@ -45,6 +47,12 @@ function App() {
   useEffect(() => {
     const token = JSON.parse(sessionStorage.getItem("token"));
     dispatch(checkAuth(token));
+
+    // Set Status Bar for Android/iOS
+    if (Capacitor.isNativePlatform()) {
+      StatusBar.setBackgroundColor({ color: '#f4e8da' });
+      StatusBar.setStyle({ style: Style.Dark });
+    }
   }, [dispatch]);
 
   if (isLoading) {

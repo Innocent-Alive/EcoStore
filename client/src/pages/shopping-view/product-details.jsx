@@ -137,18 +137,21 @@ function ProductDetailsPage() {
         breakpoint: 1280,
         settings: {
           slidesToShow: 3,
+          arrows: false,
         },
       },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          arrows: false,
         },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          arrows: false,
         },
       },
     ],

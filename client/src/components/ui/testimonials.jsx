@@ -65,7 +65,7 @@ function TestimonialCarousel() {
   const items = testimonials.map((testimonial, index) => (
     <div
       key={index}
-      className="testimonial-card flex flex-col md:flex-row items-center bg-background rounded-lg border-2 p-6 space-x-6 mx-2"
+      className="testimonial-card flex flex-col md:flex-row items-center bg-background rounded-lg border-2 p-6 md:space-x-6 mx-2"
     >
       {/* Left Side: Avatar + User Info */}
       <div className="flex items-center space-x-4 my-6">
@@ -90,7 +90,7 @@ function TestimonialCarousel() {
   ));
 
   return (
-    <div className="w-full my-16 max-w-6xl mx-auto relative">
+    <div className="w-full my-16 max-w-6xl mx-auto relative overflow-x-hidden px-4">
       <h1 className="text-center font-elsie text-3xl font-bold text-primary mb-12">
         What Testimonials Say
       </h1>
@@ -109,17 +109,17 @@ function TestimonialCarousel() {
       />
       {/* Custom Prev Button */}
       <button
-        className="absolute -left-1 top-1/2 transform translate-y-1/2 bg-primary text-background p-2 rounded-full shadow-lg z-10"
+        className="absolute left-2 md:-left-4 top-1/2 transform -translate-y-1/2 bg-primary/80 text-background p-2 rounded-full shadow-lg z-10 hover:bg-primary transition-colors"
         onClick={() => carouselRef.current.slidePrev()}
       >
-        &lt;
+        <div className="w-6 h-6 flex items-center justify-center font-bold">&lt;</div>
       </button>
       {/* Custom Next Button */}
       <button
-        className="absolute -right-1 top-1/2 transform translate-y-1/2 bg-primary text-background p-2 rounded-full shadow-lg z-10"
+        className="absolute right-2 md:-right-4 top-1/2 transform -translate-y-1/2 bg-primary/80 text-background p-2 rounded-full shadow-lg z-10 hover:bg-primary transition-colors"
         onClick={() => carouselRef.current.slideNext()}
       >
-        &gt;
+        <div className="w-6 h-6 flex items-center justify-center font-bold">&gt;</div>
       </button>
       {/* Custom Indicator Styles */}
       <div className="custom-indicators flex justify-center mt-2">

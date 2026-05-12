@@ -34,7 +34,7 @@ const Seeds = () => {
   };
 
   return (
-    <div className="flex items-center flex-col md:flex-row gap-8 p-8 bg-background rounded-lg my-16">
+    <div className="flex items-center flex-col md:flex-row gap-8 p-4 md:p-8 bg-background rounded-lg my-8 md:my-16">
       {/* Left Side: Seed Inspiration Message */}
       <div className="flex-1 relative">
         {/* Badge */}
@@ -57,14 +57,14 @@ const Seeds = () => {
       </div>
 
       {/* Right Side: Carousel */}
-      <div className="flex-1 max-w-md">
+      <div className="flex-1 w-full max-w-sm md:max-w-md mx-auto">
         <Slider {...settings}>
           {images.map((image, index) => (
             <div key={index} className="p-2">
               <img
                 src={image}
                 alt={`Seed Showcase ${index + 1}`}
-                className="w-full h-100 object-cover"
+                className="w-full h-[300px] md:h-[450px] object-contain rounded-2xl"
               />
             </div>
           ))}

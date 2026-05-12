@@ -1,0 +1,15 @@
+{
+  "appId": "com.ecostore.app",
+  "appName": "EcoStore",
+  "webDir": "dist",
+  "server": {
+    "url": "https://ecostoreonline.onrender.com",
+    "cleartext": true
+  },
+  "plugins": {
+    "StatusBar": {
+      "backgroundColor": "#ba9659",
+      "style": "DARK"
+    }
+  }
+}

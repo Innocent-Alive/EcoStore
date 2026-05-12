@@ -4,6 +4,15 @@ import { Download, Smartphone, ShieldCheck, Zap, Globe, PackageCheck } from "luc
 import { Button } from "@/components/ui/button";
 
 const DownloadApp = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/ecostore.apk";
+    link.download = "ecostore.apk";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const features = [
     {
       icon: <Zap className="w-8 h-8 text-secondary" />,
@@ -44,7 +53,10 @@ const DownloadApp = () => {
             Take the sustainable lifestyle with you wherever you go. Our Android app offers a seamless shopping experience designed for the modern eco-conscious individual.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button className="bg-primary hover:bg-secondary text-background px-8 py-6 rounded-xl text-lg flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <Button 
+              onClick={handleDownload}
+              className="bg-primary hover:bg-secondary text-background px-8 py-6 rounded-xl text-lg flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
               <Download className="w-6 h-6" />
               Download APK
             </Button>
@@ -114,7 +126,10 @@ const DownloadApp = () => {
           <p className="text-lg mb-10 opacity-90 relative z-10">
             Download the official EcoStore APK directly to your device and enjoy the best of sustainable shopping.
           </p>
-          <Button className="bg-secondary hover:bg-background hover:text-primary text-background px-10 py-7 rounded-2xl text-xl font-bold transition-all duration-300 relative z-10">
+          <Button 
+            onClick={handleDownload}
+            className="bg-secondary hover:bg-background hover:text-primary text-background px-10 py-7 rounded-2xl text-xl font-bold transition-all duration-300 relative z-10"
+          >
             GET THE APP NOW
           </Button>
           

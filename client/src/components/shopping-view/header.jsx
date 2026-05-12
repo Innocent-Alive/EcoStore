@@ -1,4 +1,4 @@
-import { LogOut, Menu, ShoppingCart, UserCog, Bell } from "lucide-react";
+import { LogOut, Menu, ShoppingCart, UserCog, Bell, X } from "lucide-react";
 import {
   Link,
   useLocation,
@@ -146,6 +146,7 @@ function HeaderRightContent() {
 }
 
 function ShoppingHeader() {
+  const [showTopBar, setShowTopBar] = useState(true);
   const { isAuthenticated } = useSelector((state) => state.auth);
   const headerRef = useRef(null);
 
@@ -168,13 +169,24 @@ function ShoppingHeader() {
       ref={headerRef}
       className="sticky top-0 z-40 w-full bg-background border-b-2 border-primary"
     >
-      <p className="flex justify-center flex-wrap items-center h-10 bg-primary px-4 text-sm font-medium text-background sm:px-6 lg:px-8">
-        For Orders or Any Queries Call Us On &nbsp;
-        <span className="hover:underline underline-offset-2">
-          +91 81698 05273
-        </span>
-        .
-      </p>
+      {showTopBar && (
+        <div className="hidden md:flex relative justify-center items-center h-10 bg-primary px-4 text-sm font-medium text-background sm:px-6 lg:px-8">
+          <p className="flex flex-wrap justify-center items-center">
+            For Orders or Any Queries Call Us On &nbsp;
+            <span className="hover:underline underline-offset-2">
+              +91 81698 05273
+            </span>
+            .
+          </p>
+          <button
+            onClick={() => setShowTopBar(false)}
+            className="absolute right-2 md:right-4 p-1 hover:bg-white/10 rounded-full transition-colors"
+            aria-label="Close announcement"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      )}
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/shop/home" className="flex items-center gap-2">
           <img

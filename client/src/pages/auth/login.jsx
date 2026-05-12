@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
+import { ArrowRight } from "lucide-react";
 
 const initialState = {
   email: "",
@@ -45,9 +46,14 @@ function AuthLogin() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-md space-y-6 login-container">
-      {" "}
-      {/* Add a class for animation */}
+    <div className="login-container mx-auto w-full max-w-md space-y-6">
+      <div className="flex flex-col items-center justify-center mb-4">
+        <img
+          src="https://res.cloudinary.com/ddnp4px7u/image/upload/v1727037064/logo1_b1yfjl.png"
+          alt="EcoStore Logo"
+          className="h-16 md:h-24 w-auto object-contain"
+        />
+      </div>
       <div className="text-center">
         <h1 className="md:text-5xl text-3xl font-medium tracking-tight text-primary font-elsie">
           Login Your Account
@@ -55,7 +61,7 @@ function AuthLogin() {
         <p className="mt-2 text-secondary">
           Don't have an account
           <Link
-            className="font-medium ml-2 text-primary hover:underline underline-offset-2"
+            className="font-medium ml-1 text-primary underline md:no-underline hover:underline underline-offset-2"
             to="/auth/register"
           >
             Register
@@ -68,6 +74,7 @@ function AuthLogin() {
         formData={formData}
         setFormData={setFormData}
         onSubmit={onSubmit}
+        buttonIcon={ArrowRight}
       />
       <div className="text-center mt-4">
         <p className="text-secondary text-sm">
